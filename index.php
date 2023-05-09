@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css?v=<?php echo time(); ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="avatar.png">
     <title>Ανοσοθεραπεία | Συστήματα Υποστήριξης Αποφάσεων </title>
 </head>
 <body>
     <main>
         <form method="post">
-            sex: <input type="text" name="sex">
-            age: <input type="number" name="age">
-            time: <input type="number" name="time">
-            Number of Warts: <input type="number" name="warts">
-            Type: <input type="number" name="type">
-            Area: <input type="number" name="area">
-            induration diameter: <input type="number" name="induration">
+            Sex: <input type="number" name="sex" placeholder="Sex {1:Female 2:Male}" min="1" max="2">
+            Age: <input type="number" name="age" placeholder="Age">
+            Time: <input type="number" name="time" placeholder="Time">
+            Number of Warts: <input type="number" name="warts" placeholder="Number of Warts">
+            Type: <input type="number" name="type" placeholder="Type">
+            Area: <input type="number" name="area" placeholder="Area">
+            Induration diameter: <input type="number" name="induration" placeholder="Induration diameter">
             <input type="submit" name="submit">
         </form>
         <?php
@@ -47,7 +47,7 @@
 @attribute induration_diameter numeric
 @attribute Result_of_Treatment {0,1}
                     
-                    @data \n".$value1.",".$value2.",".$value3.",".$value4.",".$value5.",".$value6.",".$value7.",?\n";
+@data \n".$value1.",".$value2.",".$value3.",".$value4.",".$value5.",".$value6.",".$value7.",?\n";
                     if(!fwrite($fp,$str)) die ("couldnt write to file.");
                 }
                 fclose($fp);
