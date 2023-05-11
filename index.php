@@ -47,22 +47,27 @@
 @attribute induration_diameter numeric
 @attribute Result_of_Treatment {0,1}
                     
-@data \n".$value1.",".$value2.",".$value3.",".$value4.",".$value5.",".$value6.",".$value7.",?\n";
+@data \n".$value1.",".$value2.",".$value3.",".$value4.",".$value5.",".$value6.",".$value7.",?";
                     if(!fwrite($fp,$str)) die ("couldnt write to file.");
                 }
+                
                 fclose($fp);
             }        
             
-            $cmd = "java -classpath weka.jar weka.classifiers.bayes.NaiveBayes -T new-immunotherapy.arff -l test5.model -p 0 2>&1";
-
+            $cmd = "java -classpath weka.jar weka.classifiers.bayes.NaiveBayes -T new-immunotherapy.arff -l test5.model -p 0 2>&1 > new.txt";
+            
             exec($cmd,$output);
-
-            echo "<h3>Results...</h3>";
-            for($i=0;$i<sizeof($output);$i++)
+            $cmd2 = "tail -2 new.txt";
+            exec($cmd2,$output2);
+            echo "<h3>Results</h3>";
+            for($i=0;$i<sizeof($output2);$i++)
             {
-                trim($output[$i]);
-                echo($output[$i])."<br>";
+                $words = explode(' ',$output2[$i]);
+                $words[31] = $words[31] * 100;
+                echo("Anoikeis stin omada".$words[24]."\n");
+                echo("Me pithanotita".$words[31]);
             }
+            
         ?>
     </main>
 </body>
