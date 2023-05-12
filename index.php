@@ -60,13 +60,23 @@
             $cmd2 = "tail -2 new.txt";
             exec($cmd2,$output2);
             echo "<h3>Results</h3>";
-            for($i=0;$i<sizeof($output2);$i++)
+            for($i=0;$i<sizeof($output2);)
             {
                 $words = explode(' ',$output2[$i]);
-                $words[31] = $words[31] * 100;
-                echo("Anoikeis stin omada".$words[24]."\n");
-                echo("Me pithanotita".$words[31]);
+                $class = explode(':',$words[24]);
+                switch($class[1])
+                {
+                    case 1:
+                        echo "Η Ανασοθεραπεία θα είναι επιτυχής";
+                        break;
+                    case 0:
+                        echo "Η Ανασοθεραπεία δεν θα είναι επιτυχής";
+                        break;
+                }
+                break;
             }
+
+            
             
         ?>
     </main>
