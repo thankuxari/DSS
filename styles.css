@@ -34,6 +34,7 @@ form{
     background-color: rgb(232, 229, 229);
     padding:1.5em;
     border-radius: 1.1em;
+    box-shadow:0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
 form input{
@@ -50,5 +51,10 @@ input[type="submit"]{
     background: #0052D4;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
+
+    input[type="submit"]:hover{
+        background: #0052D4;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #598ec9, #3955d2, #0141a7);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #598ec9, #3955d2, #0141a7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari */
+    }
